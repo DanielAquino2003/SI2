@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Aplicacion de Voto Electrónico</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Complete la información sobre el censo asociado a la persona que está votando:</h2>
+          <table>
+                <tr>
+                    <td>Número de DNI: </td>
+                    <td>
+			<h:inputText id="numeroDNI" title="Número de DNI"
+                         value="#{censoBean.numeroDNI}" required="true"
+                         requiredMessage="Error: ¡se necesita un número de DNI!"
+                         maxlength="9" />
+		    </td>
+		 </tr>
+		 <tr>
+                    <td>Nombre y Apellidos: </td>
+                    <td>
+			<h:inputText id="nombre" title="Nombre y Apellidos:"
+                         value="#{censoBean.nombre}" required="true"
+                         requiredMessage="Error: ¡se necesita un nombre y apellidos!"
+                         maxlength="128" />
+		    </td>
+                </tr>
+		 <tr>
+                    <td>Fecha de Nacimiento: </td>
+                    <td>
+			<h:inputText id="fechaNacimiento" title="Fecha de Nacimiento:"
+                         value="#{censoBean.fechaNacimiento}" required="true"
+                         requiredMessage="Error: ¡se necesita una fecha de nacimiento!"
+                         maxlength="8" />
+		    </td>
+                </tr>
+		<tr>
+                    <td>Código Autorización: </td>
+                    <td>
+			<h:inputText id="codigoAutorizacion" title="Código Autorización:"
+                         value="#{censoBean.codigoAutorizacion}" required="true"
+                         requiredMessage="Error: ¡se necesita un codigo de autorización!"
+                         maxlength="3" />
+		    </td>
+                </tr>
+
+                <tr>
+		    <td><h:commandButton id="back" value="Volver" action="voto" /></td>
+		    <td><h:commandButton id="submit" value="Registrar Voto" action="#{controladorBean.enviarVoto}" /></td>
+                </tr>                
+          </table>
+        </h:form>
+        <div class="messagecolor">
+            <h:messages showSummary="true" showDetail="false" errorStyle="color: #d20005" infoStyle="color: blue"/>
+        </div>
+    </h:body>
+</html>
+
