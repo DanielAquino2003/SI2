@@ -8,7 +8,8 @@ import jakarta.faces.context.*;
 
 import ssii2.voto.*;
 import ssii2.interaccion.*;
-import ssii2.voto.dao.VotoDAO;
+import ssii2.voto.dao.VotoDAOWS;
+import ssii2.servicio.VotoDAOWSService;
 
 /*
  * Managed Bean de ambito de sesion que recoge los datos de la votacion.
@@ -43,95 +44,88 @@ public class ControladorBean implements Serializable {
 	    }
 	    /* Instanciamos el objeto que presta la lógica de negocio de la aplicación */
 
-            VotoDAO dao = new VotoDAO();
+        VotoDAOWSService service = new VotoDAOWSService();
+        VotoDAOWS dao = service.getVotoDAOWSPort();
 
-	    dao.setDirectConnection(this.interaccion.getConexionDirecta());
-	    dao.setDebug(this.interaccion.getDebug());
-	    dao.setPrepared(this.interaccion.getPreparedStatements());
-
-	    /* Comprobamos que el ciudadano está en el censo */
-
-	    if (dao.compruebaCenso(this.voto.getCenso()) == false) {
-
-		String error_msg = "¡El ciudadano no se encuentra en el censo!";
-
-	    	if (this.interaccion.getDebug() == true) {
-	    		this.escribirLog(error_msg);
-		}
-
-		this.setMensajeError(error_msg);
-	    	return "error";
-	    } 
-
-	    /* Registramos el voto */
-	    
-	    if (dao.registraVoto(this.voto) == false) {
-
-		String error_msg = "¡No se ha podido registrar el voto!";
-
-	    	if (this.interaccion.getDebug() == true) {
-	    		this.escribirLog(error_msg);
-		}
-
-		this.setMensajeError(error_msg);
-	    	return "error";
-
-	    }
-
-	    /* Todo ha ido bien. Vamos a la página de respuesta */
-
-	    if (this.interaccion.getDebug() == true) {
-	    	this.escribirLog("¡Voto registrado correctamente!");
-	    }
-
-	    return "respuesta";
+	    try {
+            // Traducimos la información del voto al formato del servicio web
+            ssii2.servicio.VotoBean votoParaServicio = traducirVotoParaServicio(this.voto);
+			
+            // Llamamos al método registraVoto() del servicio web
+            ssii2.servicio.VotoBean votoRegistrado = dao.registraVoto(votoParaServicio);
+            
+            // Actualizamos los atributos del voto con los valores devueltos por el servicio web
+            this.voto.setIdVoto(votoRegistrado.getIdVoto());
+            this.voto.setMarcaTiempo(votoRegistrado.getMarcaTiempo());
+            this.voto.setCodigoRespuesta(votoRegistrado.getCodigoRespuesta());
+            
+            // Todo ha ido bien. Vamos a la página de respuesta
+            if (this.interaccion.getDebug() == true) {
+                this.escribirLog("¡Voto registrado correctamente!");
+            }
+            return "respuesta";
+        } catch (Exception e) {
+            // Manejamos la excepción
+            e.printStackTrace(); // Aquí puedes implementar el manejo específico de la excepción
+            return "error"; // Retornamos una página de error
+        }
     }
 
     // Metodo que recibe la acción de borrar los votos de un proceso electoral
     // e interactua con la lógica de negocio para llevarlo a cabo
 
     public String borrarVotos() {
+        try {
+            VotoDAOWSService service = new VotoDAOWSService();
+            VotoDAOWS dao = service.getVotoDAOWSPort();
 
-	    /* Instanciamos el objeto que presta la lógica de negocio de la aplicación */
+            // Llamada al método del servicio web para borrar votos
+            int votosBorrados = dao.delVotos(this.voto.getIdProcesoElectoral());
 
-            VotoDAO dao = new VotoDAO();
+            // Almacenamos el número de votos borrados en la sesión para mostrarlo en la página de éxito
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+                .put("numVotosBorrados", String.valueOf(votosBorrados));
 
-	    // Borramos los votos
-
-	    int votos_borrados = dao.delVotos(this.voto.getIdProcesoElectoral());
-
-	    // Comprobamos el nº de votos borrados
-
-	    if (votos_borrados != 0) {
-	    	FacesContext.getCurrentInstance().getExternalContext().getSessionMap().
-			put("numVotosBorrados", String.valueOf(votos_borrados));
-
-	    	return "borradook";
-	    } 
-	    
-	    String error_msg = "¡No se ha podido borrar ningún voto!";
-	    this.setMensajeError(error_msg);
-
-	    return "error";
+            return "borradook";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     // Metodo que recibe la acción de consultar los votos de un proceso electoral
     // e interactua con la lógica de negocio para llevarlo a cabo
 
     public String consultarVotos() {
+        try {
+            VotoDAOWSService service = new VotoDAOWSService();
+            VotoDAOWS dao = service.getVotoDAOWSPort();
 
-	    /* Instanciamos el objeto que presta la lógica de negocio de la aplicación */
+            // Llamada al método del servicio web para consultar votos
+            List<ssii2.servicio.VotoBean> votos = dao.getVotos(this.voto.getIdProcesoElectoral());
 
-            VotoDAO dao = new VotoDAO();
+            // Convertimos la lista de votos del servicio web a un array de VotoBean[]
+            ArrayList<VotoBean> votosList = new ArrayList<>();
+            for (ssii2.servicio.VotoBean v : votos) {
+                VotoBean votoBean = new VotoBean();
+                votoBean.setIdVoto(v.getIdVoto());
+                votoBean.setMarcaTiempo(v.getMarcaTiempo());
+                votoBean.setCodigoRespuesta(v.getCodigoRespuesta());
+                // Otros atributos si es necesario
 
-	    // Obtenemos los votos
+                votosList.add(votoBean);
+            }
+            VotoBean[] votosArray = votosList.toArray(new VotoBean[votosList.size()]);
 
-	    VotoBean[] votos = dao.getVotos(this.voto.getIdProcesoElectoral());
+            // Almacenamos los votos en la sesión para mostrarlos en la página listavotos.xhtml
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+                .put("votosObtenidos", votosArray);
 
-	    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().
-			put("votosObtenidos", votos);
-
-	    return "listadoVotos";
+            return "listadoVotos";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     // Método que escribe en el log del servidor
@@ -144,6 +138,24 @@ public class ControladorBean implements Serializable {
     
     private void setMensajeError(String mensaje) {
 	    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("error", mensaje);
+    }
+
+	// Método que traduce un objeto VotoBean al formato del servicio web
+    private ssii2.servicio.VotoBean traducirVotoParaServicio(VotoBean voto) {
+        ssii2.servicio.CensoBean censo_nuevo = new ssii2.servicio.CensoBean();
+        ssii2.servicio.VotoBean voto_nuevo = new ssii2.servicio.VotoBean();
+
+        voto_nuevo.setIdCircunscripcion(voto.getIdCircunscripcion());
+        voto_nuevo.setIdMesaElectoral(voto.getIdMesaElectoral());
+        voto_nuevo.setIdProcesoElectoral(voto.getIdProcesoElectoral());
+        voto_nuevo.setNombreCandidatoVotado(voto.getNombreCandidatoVotado());
+        censo_nuevo.setNumeroDNI(voto.getCenso().getNumeroDNI());
+        censo_nuevo.setFechaNacimiento(voto.getCenso().getFechaNacimiento());
+        censo_nuevo.setNombre(voto.getCenso().getNombre());
+        censo_nuevo.setCodigoAutorizacion(voto.getCenso().getCodigoAutorizacion());
+
+        voto_nuevo.setCenso(censo_nuevo);
+        return voto_nuevo;
     }
 }
 

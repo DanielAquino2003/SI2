@@ -20,6 +20,12 @@
         <param-name>jakarta.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+    <!-- Nuevo parametro de inicializacion para la URL del servicio remoto -->
+    <context-param>
+        <param-name>servicioRemotoURL</param-name>
+        <param-value>http://10.4.1.2:8080/P1-ws-ws/VotoDAOWSService</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>

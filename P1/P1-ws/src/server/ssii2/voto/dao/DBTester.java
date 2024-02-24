@@ -21,7 +21,7 @@ public class DBTester {
     // TODO: Definir la cadena de conexion a la base de datos
     /*********************************************************/
     private static final String JDBC_CONNSTRING =
-            "jdbc:derby://10.1.1.1:5432/voto;create=true";
+            "jdbc:derby://10.4.1.2:5432/voto;create=true";
     /*********************************************************/
     private static final String JDBC_USER = "alumnodb";
     private static final String JDBC_PASSWORD = "****";
