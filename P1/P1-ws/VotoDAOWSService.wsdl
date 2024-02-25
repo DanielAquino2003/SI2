@@ -4,11 +4,29 @@
 <xsd:import namespace="http://dao.voto.ssii2/" schemaLocation="http://10.4.1.2:8080/P1-ws-ws/VotoDAOWSService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="setDirectConnection">
-<part name="parameters" element="tns:setDirectConnection"/>
+<message name="isDebug">
+<part name="parameters" element="tns:isDebug"/>
 </message>
-<message name="setDirectConnectionResponse">
-<part name="parameters" element="tns:setDirectConnectionResponse"/>
+<message name="isDebugResponse">
+<part name="parameters" element="tns:isDebugResponse"/>
+</message>
+<message name="setDebug">
+<part name="parameters" element="tns:setDebug"/>
+</message>
+<message name="setDebugResponse">
+<part name="parameters" element="tns:setDebugResponse"/>
+</message>
+<message name="isPrepared">
+<part name="parameters" element="tns:isPrepared"/>
+</message>
+<message name="isPreparedResponse">
+<part name="parameters" element="tns:isPreparedResponse"/>
+</message>
+<message name="getVotos">
+<part name="parameters" element="tns:getVotos"/>
+</message>
+<message name="getVotosResponse">
+<part name="parameters" element="tns:getVotosResponse"/>
 </message>
 <message name="isDirectConnection">
 <part name="parameters" element="tns:isDirectConnection"/>
@@ -16,11 +34,11 @@
 <message name="isDirectConnectionResponse">
 <part name="parameters" element="tns:isDirectConnectionResponse"/>
 </message>
-<message name="isPrepared">
-<part name="parameters" element="tns:isPrepared"/>
+<message name="setDirectConnection">
+<part name="parameters" element="tns:setDirectConnection"/>
 </message>
-<message name="isPreparedResponse">
-<part name="parameters" element="tns:isPreparedResponse"/>
+<message name="setDirectConnectionResponse">
+<part name="parameters" element="tns:setDirectConnectionResponse"/>
 </message>
 <message name="compruebaCenso">
 <part name="parameters" element="tns:compruebaCenso"/>
@@ -34,12 +52,6 @@
 <message name="registraVotoResponse">
 <part name="parameters" element="tns:registraVotoResponse"/>
 </message>
-<message name="getVotos">
-<part name="parameters" element="tns:getVotos"/>
-</message>
-<message name="getVotosResponse">
-<part name="parameters" element="tns:getVotosResponse"/>
-</message>
 <message name="delVotos">
 <part name="parameters" element="tns:delVotos"/>
 </message>
@@ -52,30 +64,30 @@
 <message name="setPreparedResponse">
 <part name="parameters" element="tns:setPreparedResponse"/>
 </message>
-<message name="isDebug">
-<part name="parameters" element="tns:isDebug"/>
-</message>
-<message name="isDebugResponse">
-<part name="parameters" element="tns:isDebugResponse"/>
-</message>
-<message name="setDebug">
-<part name="parameters" element="tns:setDebug"/>
-</message>
-<message name="setDebugResponse">
-<part name="parameters" element="tns:setDebugResponse"/>
-</message>
 <portType name="VotoDAOWS">
-<operation name="setDirectConnection">
-<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setDirectConnectionRequest" message="tns:setDirectConnection"/>
-<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setDirectConnectionResponse" message="tns:setDirectConnectionResponse"/>
+<operation name="isDebug">
+<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isDebugRequest" message="tns:isDebug"/>
+<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isDebugResponse" message="tns:isDebugResponse"/>
+</operation>
+<operation name="setDebug">
+<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setDebugRequest" message="tns:setDebug"/>
+<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setDebugResponse" message="tns:setDebugResponse"/>
+</operation>
+<operation name="isPrepared">
+<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isPreparedRequest" message="tns:isPrepared"/>
+<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isPreparedResponse" message="tns:isPreparedResponse"/>
+</operation>
+<operation name="getVotos">
+<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/getVotosRequest" message="tns:getVotos"/>
+<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/getVotosResponse" message="tns:getVotosResponse"/>
 </operation>
 <operation name="isDirectConnection">
 <input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isDirectConnectionRequest" message="tns:isDirectConnection"/>
 <output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isDirectConnectionResponse" message="tns:isDirectConnectionResponse"/>
 </operation>
-<operation name="isPrepared">
-<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isPreparedRequest" message="tns:isPrepared"/>
-<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isPreparedResponse" message="tns:isPreparedResponse"/>
+<operation name="setDirectConnection">
+<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setDirectConnectionRequest" message="tns:setDirectConnection"/>
+<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setDirectConnectionResponse" message="tns:setDirectConnectionResponse"/>
 </operation>
 <operation name="compruebaCenso">
 <input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/compruebaCensoRequest" message="tns:compruebaCenso"/>
@@ -85,10 +97,6 @@
 <input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/registraVotoRequest" message="tns:registraVoto"/>
 <output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/registraVotoResponse" message="tns:registraVotoResponse"/>
 </operation>
-<operation name="getVotos">
-<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/getVotosRequest" message="tns:getVotos"/>
-<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/getVotosResponse" message="tns:getVotosResponse"/>
-</operation>
 <operation name="delVotos">
 <input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/delVotosRequest" message="tns:delVotos"/>
 <output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/delVotosResponse" message="tns:delVotosResponse"/>
@@ -97,18 +105,37 @@
 <input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setPreparedRequest" message="tns:setPrepared"/>
 <output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setPreparedResponse" message="tns:setPreparedResponse"/>
 </operation>
-<operation name="isDebug">
-<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isDebugRequest" message="tns:isDebug"/>
-<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/isDebugResponse" message="tns:isDebugResponse"/>
-</operation>
-<operation name="setDebug">
-<input wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setDebugRequest" message="tns:setDebug"/>
-<output wsam:Action="http://dao.voto.ssii2/VotoDAOWS/setDebugResponse" message="tns:setDebugResponse"/>
-</operation>
 </portType>
 <binding name="VotoDAOWSPortBinding" type="tns:VotoDAOWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="setDirectConnection">
+<operation name="isDebug">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="setDebug">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="isPrepared">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getVotos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -126,7 +153,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="isPrepared">
+<operation name="setDirectConnection">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -153,15 +180,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getVotos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="delVotos">
 <soap:operation soapAction=""/>
 <input>
@@ -172,24 +190,6 @@
 </output>
 </operation>
 <operation name="setPrepared">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="isDebug">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="setDebug">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

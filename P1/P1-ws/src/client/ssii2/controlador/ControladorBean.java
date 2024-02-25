@@ -5,11 +5,15 @@ import jakarta.inject.Named;
 import jakarta.inject.Inject;
 import java.io.Serializable;
 import jakarta.faces.context.*;
+import java.util.List;
+import java.util.ArrayList;
 
 import ssii2.voto.*;
 import ssii2.interaccion.*;
-import ssii2.voto.dao.VotoDAOWS;
+import ssii2.servicio.VotoDAOWS;
 import ssii2.servicio.VotoDAOWSService;
+
+import jakarta.xml.ws.BindingProvider;
 
 /*
  * Managed Bean de ambito de sesion que recoge los datos de la votacion.
@@ -66,8 +70,8 @@ public class ControladorBean implements Serializable {
             return "respuesta";
         } catch (Exception e) {
             // Manejamos la excepción
-            e.printStackTrace(); // Aquí puedes implementar el manejo específico de la excepción
-            return "error"; // Retornamos una página de error
+            e.printStackTrace();
+            return "error";
         }
     }
 
@@ -111,7 +115,10 @@ public class ControladorBean implements Serializable {
                 votoBean.setIdVoto(v.getIdVoto());
                 votoBean.setMarcaTiempo(v.getMarcaTiempo());
                 votoBean.setCodigoRespuesta(v.getCodigoRespuesta());
-                // Otros atributos si es necesario
+                votoBean.setIdCircunscripcion(v.getIdCircunscripcion());
+                votoBean.setIdMesaElectoral(v.getIdMesaElectoral());
+                votoBean.setIdProcesoElectoral(v.getIdProcesoElectoral());
+                votoBean.setNombreCandidatoVotado(v.getNombreCandidatoVotado());
 
                 votosList.add(votoBean);
             }
