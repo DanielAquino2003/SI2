@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 import ssii2.voto.*;
 import ssii2.interaccion.*;
-import ssii2.servicio.VotoDAOWS;
-import ssii2.servicio.VotoDAOWSService;
 
-import jakarta.xml.ws.BindingProvider;
+
+import jakarta.ejb.EJB;
+import ssii2.servicio.dao.VotoDAORemote;
 
 /*
  * Managed Bean de ambito de sesion que recoge los datos de la votacion.
@@ -28,6 +28,8 @@ public class ControladorBean implements Serializable {
     // a un bean de sesión con la información del voto
     
     @Inject private VotoBean voto; 
+    @EJB(name = "VotoDAOBean", beanInterface = VotoDAORemote.class)
+    private VotoDAORemote dao;
 
     // Referencia obtenida por inyección
     // a un bean de sesión con la información de la interacción
@@ -48,15 +50,13 @@ public class ControladorBean implements Serializable {
 	    }
 	    /* Instanciamos el objeto que presta la lógica de negocio de la aplicación */
 
-        VotoDAOWSService service = new VotoDAOWSService();
-        VotoDAOWS dao = service.getVotoDAOWSPort();
 
 	    try {
             // Traducimos la información del voto al formato del servicio web
-            ssii2.servicio.VotoBean votoParaServicio = traducirVotoParaServicio(this.voto);
+            ssii2.voto.VotoBean votoParaServicio = traducirVotoParaServicio(this.voto);
 			
             // Llamamos al método registraVoto() del servicio web
-            ssii2.servicio.VotoBean votoRegistrado = dao.registraVoto(votoParaServicio);
+            ssii2.voto.VotoBean votoRegistrado = dao.registraVoto(votoParaServicio);
             
             // Actualizamos los atributos del voto con los valores devueltos por el servicio web
             this.voto.setIdVoto(votoRegistrado.getIdVoto());
@@ -80,8 +80,6 @@ public class ControladorBean implements Serializable {
 
     public String borrarVotos() {
         try {
-            VotoDAOWSService service = new VotoDAOWSService();
-            VotoDAOWS dao = service.getVotoDAOWSPort();
 
             // Llamada al método del servicio web para borrar votos
             int votosBorrados = dao.delVotos(this.voto.getIdProcesoElectoral());
@@ -102,15 +100,13 @@ public class ControladorBean implements Serializable {
 
     public String consultarVotos() {
         try {
-            VotoDAOWSService service = new VotoDAOWSService();
-            VotoDAOWS dao = service.getVotoDAOWSPort();
 
             // Llamada al método del servicio web para consultar votos
-            List<ssii2.servicio.VotoBean> votos = dao.getVotos(this.voto.getIdProcesoElectoral());
+            VotoBean[] votos = dao.getVotos(this.voto.getIdProcesoElectoral());
 
             // Convertimos la lista de votos del servicio web a un array de VotoBean[]
             ArrayList<VotoBean> votosList = new ArrayList<>();
-            for (ssii2.servicio.VotoBean v : votos) {
+            for (ssii2.voto.VotoBean v : votos) {
                 VotoBean votoBean = new VotoBean();
                 votoBean.setIdVoto(v.getIdVoto());
                 votoBean.setMarcaTiempo(v.getMarcaTiempo());
@@ -148,9 +144,9 @@ public class ControladorBean implements Serializable {
     }
 
 	// Método que traduce un objeto VotoBean al formato del servicio web
-    private ssii2.servicio.VotoBean traducirVotoParaServicio(VotoBean voto) {
-        ssii2.servicio.CensoBean censo_nuevo = new ssii2.servicio.CensoBean();
-        ssii2.servicio.VotoBean voto_nuevo = new ssii2.servicio.VotoBean();
+    private ssii2.voto.VotoBean traducirVotoParaServicio(VotoBean voto) {
+        ssii2.voto.CensoBean censo_nuevo = new ssii2.voto.CensoBean();
+        ssii2.voto.VotoBean voto_nuevo = new ssii2.voto.VotoBean();
 
         voto_nuevo.setIdCircunscripcion(voto.getIdCircunscripcion());
         voto_nuevo.setIdMesaElectoral(voto.getIdMesaElectoral());

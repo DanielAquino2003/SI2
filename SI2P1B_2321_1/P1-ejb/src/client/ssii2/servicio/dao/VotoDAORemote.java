@@ -20,6 +20,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import jakarta.ejb.Remote;
 import ssii2.servicio.*;
+import ssii2.voto.VotoBean;
 
 @Remote
 public interface VotoDAORemote {
