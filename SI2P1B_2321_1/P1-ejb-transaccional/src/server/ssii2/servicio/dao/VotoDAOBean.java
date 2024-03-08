@@ -23,6 +23,8 @@ import java.time.LocalDate;
 import jakarta.ejb.Stateless;
 import ssii2.servicio.dao.VotoDAORemote;
 
+import jakarta.ejb.EJBException;
+
 /* @WebService(): indica que la clase Java implementa un servicio web. */
 /* @WebMethod(): /* indica que el método Java que le sigue será exportado como un método
 público del servicio. */
@@ -78,6 +80,14 @@ public class VotoDAOBean extends DBTester implements VotoDAORemote {
                     " where idProcesoElectoral = ?" +
                     " and numeroDNI = ?";
     /**************************************************/
+
+    private static final String SELECT_VOTOS_RESTANTES_QRY =
+                    "select numeroVotosRestantes from censo " +
+                    " where numeroDNI=?";
+
+    private static final String UPDATE_VOTOS_RESTANTES_QRY =
+                    "update censo SET numeroVotosRestantes = ? " +
+                    " where numeroDNI=?";
 
     @Override
     public boolean isDirectConnection() {
@@ -241,6 +251,25 @@ public class VotoDAOBean extends DBTester implements VotoDAORemote {
             // Obtener conexion
             con = getConnection();
 
+            pstmt = con.prepareStatement(SELECT_VOTOS_RESTANTES_QRY);
+            pstmt.setString(1, voto.getCenso().getNumeroDNI());
+            rs = pstmt.executeQuery();
+            int votosRestantes = 0;
+            if (rs.next()) {
+                votosRestantes = rs.getInt("numeroVotosRestantes");
+            }
+
+            if (votosRestantes <= 0) {
+                return null;
+            }
+            
+            votosRestantes--;
+
+            pstmt = con.prepareStatement(UPDATE_VOTOS_RESTANTES_QRY);
+            pstmt.setInt(1, votosRestantes);
+            pstmt.setString(2, voto.getCenso().getNumeroDNI());
+            pstmt.executeUpdate();
+
             // Insertar en la base de datos el voto
 
             if (isPrepared() == true) {
@@ -267,7 +296,7 @@ public class VotoDAOBean extends DBTester implements VotoDAORemote {
 
             	if (!stmt.execute(insert) && stmt.getUpdateCount() == 1) {
                 	ret = true;
-		}
+		        }
             }
 
             // Obtener id.voto
@@ -303,8 +332,8 @@ public class VotoDAOBean extends DBTester implements VotoDAORemote {
             }
 
         } catch (Exception e) {
-            errorLog(e.toString());
             ret = false;
+            throw new EJBException("Error al registrar el voto: " + e.getMessage());
         } finally {
             try {
                 if (rs != null) {
@@ -320,6 +349,7 @@ public class VotoDAOBean extends DBTester implements VotoDAORemote {
                     closeConnection(con); con = null;
                 }
             } catch (SQLException e) {
+                throw new EJBException("Error al cerrar los recursos de la base de datos: " + e.getMessage()); 
             }
         }
 
@@ -453,6 +483,83 @@ public class VotoDAOBean extends DBTester implements VotoDAORemote {
 
         return ret;
     }
+
+    public int obtenerNumeroVotosRestantes(String numeroDNI) {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        int numeroVotosRestantes = -1;
+    
+        try {
+            con = getConnection();
+            String query = SELECT_VOTOS_RESTANTES_QRY;
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, numeroDNI);
+            rs = pstmt.executeQuery();
+    
+            if (rs.next()) {
+                numeroVotosRestantes = rs.getInt("numeroVotosRestantes");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Cerramos los recursos en orden inverso de apertura para evitar problemas de dependencia
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (con != null) {
+                    // Cerramos la conexión y manejamos cualquier excepción que pueda ocurrir
+                    try {
+                        closeConnection(con);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    
+        return numeroVotosRestantes;
+    }
+
+    public void actualizarNumeroVotosRestantes(String numeroDNI, int nuevosVotosRestantes) {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+    
+        try {
+            con = getConnection();
+            String query = UPDATE_VOTOS_RESTANTES_QRY;
+            pstmt = con.prepareStatement(query);
+            pstmt.setInt(1, nuevosVotosRestantes);
+            pstmt.setString(2, numeroDNI);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Cerramos los recursos en orden inverso de apertura para evitar problemas de dependencia
+            try {
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (con != null) {
+                    // Cerramos la conexión y manejamos cualquier excepción que pueda ocurrir
+                    try {
+                        closeConnection(con);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+    
 
     /**
      * TODO: Metodos isPrepared() y setPrepared()

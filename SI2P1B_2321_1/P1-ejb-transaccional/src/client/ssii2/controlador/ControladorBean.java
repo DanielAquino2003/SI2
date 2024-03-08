@@ -14,6 +14,8 @@ import ssii2.interaccion.*;
 
 import jakarta.ejb.EJB;
 import ssii2.servicio.dao.VotoDAORemote;
+
+import jakarta.ejb.EJBException;
 /*
  * Managed Bean de ambito de sesion que recoge los datos de la votacion.
  */
@@ -67,6 +69,9 @@ public class ControladorBean implements Serializable {
                 this.escribirLog("¡Voto registrado correctamente!");
             }
             return "respuesta";
+        } catch (EJBException ejbEx) {
+            ejbEx.printStackTrace();
+            return "error";
         } catch (Exception e) {
             // Manejamos la excepción
             e.printStackTrace();
