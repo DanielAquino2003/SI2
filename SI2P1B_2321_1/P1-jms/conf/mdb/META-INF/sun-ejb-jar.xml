@@ -6,7 +6,7 @@
       <ejb-name>VotoCancelacionJMSBean</ejb-name>
       <mdb-connection-factory>
       <!-- TODO - definir el nombre de la connection factory -->
-      <jndi-name>VotoConnectionFactory</jndi-name>
+      <jndi-name>jms/VotoConnectionFactory</jndi-name>
       </mdb-connection-factory>
     </ejb>
   </enterprise-beans>

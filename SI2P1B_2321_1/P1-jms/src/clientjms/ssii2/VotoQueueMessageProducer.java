@@ -61,42 +61,50 @@ public class VotoQueueMessageProducer {
     }
 
     public static void main(String[] args) {
-        Connection connection = null;
-        Session session = null;
-        MessageProducer messageProducer = null;
-        TextMessage message = null;
-
-        if (args.length != 1) {
+      Connection connection = null;
+      Session session = null;
+      MessageProducer messageProducer = null;
+      TextMessage message = null;
+  
+      if (args.length != 1) {
           System.err.println("Uso: VotoQueueMessageProducer [-browse | <msg>]");
           return;
-        }
-
-        try {
-          // TODO: Inicializar connectionFactory
-          // y queue mediante JNDI
-          
-          //InitialContext jndi = new InitialContext();
-          //connectionFactory = (ConnectionFactory)jndi.lookup("jms/VotoConnectionFactory");
-          //queue = (Queue)jndi.lookup("jms/VotosQueue");
-
+      }
+  
+      try {
+          // Inicializar connectionFactory y queue mediante JNDI
+          InitialContext jndi = new InitialContext();
+          connectionFactory = (ConnectionFactory) jndi.lookup("jms/VotoConnectionFactory");
+          queue = (Queue) jndi.lookup("jms/VotosQueue");
+  
           connection = connectionFactory.createConnection();
           session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
           if (args[0].equals("-browse")) {
-            browseMessages(session); 
+              browseMessages(session);
           } else {
-            // TODO: Enviar argv[0] como mensaje de texto
+              // Crear un productor de mensajes para la cola
+              messageProducer = session.createProducer(queue);
+  
+              // Crear un mensaje de texto y establecer su contenido
+              message = session.createTextMessage();
+              message.setText(args[0]);
+  
+              // Enviar el mensaje a la cola
+              messageProducer.send(message);
+              System.out.println("Mensaje enviado correctamente: " + args[0]);
           }
-        } catch (Exception e) {
-            System.out.println("Excepcion : " + e.toString());
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (JMSException e) {
-                }
-            } // if
-
-            System.exit(0);
-        } // finally
-    } // main
+      } catch (Exception e) {
+          System.out.println("Excepcion : " + e.toString());
+      } finally {
+          if (connection != null) {
+              try {
+                  connection.close();
+              } catch (JMSException e) {
+                  e.printStackTrace();
+              }
+          }
+          System.exit(0);
+      }
+  }
+  
 } // class

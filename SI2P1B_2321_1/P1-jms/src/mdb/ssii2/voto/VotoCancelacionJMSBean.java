@@ -33,20 +33,20 @@ public class VotoCancelacionJMSBean extends DBTester implements MessageListener 
    // TODO : Definir UPDATE sobre la tabla votos para poner
    // codRespuesta a 999 dado un código de idVoto
 
-    private static final String SELECT_CODIGO_RESPUESTA =
+  private static final String SELECT_CODIGO_RESPUESTA =
                     "SELECT codRespuesta " +
-                    "FROM votos " +
+                    "FROM voto " +
                     "WHERE idVoto = ?";
 
   private static final String UPDATE_CODIGO_RESPUESTA =
-                    "UPDATE votos " +
+                    "UPDATE voto " +
                     "SET codRespuesta = 999 " +
                     "WHERE idVoto = ?";
 
   private static final String UPDATE_NUMERO_VOTOS_RESTANTES =
                     "UPDATE censo " +
-                    "SET numeroVotosRestantes = numeroVotosRestantes - 1 " +
-                    "WHERE numeroDNI = ?";
+                    "SET numeroVotosRestantes = numeroVotosRestantes + 1 " +
+                    "WHERE numeroDNI = (SELECT numeroDNI FROM voto WHERE idVoto = ?)";
 
   public VotoCancelacionJMSBean() {
   }
@@ -68,7 +68,7 @@ public class VotoCancelacionJMSBean extends DBTester implements MessageListener 
               Connection con = getConnection();
               
               PreparedStatement selectStmt = con.prepareStatement(SELECT_CODIGO_RESPUESTA);
-              selectStmt.setString(1, idVoto);
+              selectStmt.setInt(1,Integer.parseInt(idVoto));
               ResultSet rs = selectStmt.executeQuery();
               String codRespuesta = "";
               if (rs.next()) {
@@ -78,12 +78,12 @@ public class VotoCancelacionJMSBean extends DBTester implements MessageListener 
               selectStmt.close();
               if (codRespuesta.equals("000")) {
                   PreparedStatement updateRespStmt = con.prepareStatement(UPDATE_CODIGO_RESPUESTA);
-                  updateRespStmt.setString(1, idVoto);
+                  updateRespStmt.setInt(1, Integer.parseInt(idVoto));
                   updateRespStmt.executeUpdate();
                   updateRespStmt.close();
 
                   PreparedStatement updateVotosStmt = con.prepareStatement(UPDATE_NUMERO_VOTOS_RESTANTES);
-                  updateVotosStmt.setString(1, idVoto);
+                  updateVotosStmt.setInt(1, Integer.parseInt(idVoto));
                   updateVotosStmt.executeUpdate();
                   updateVotosStmt.close();
               }
