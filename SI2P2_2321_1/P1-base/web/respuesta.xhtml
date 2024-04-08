@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Información Registro Voto:</title>
+    </h:head>
+    <h:body>
+        <h2>Información Sobre el Registro del Voto:</h2>
+		<table>
+
+		<tr><td>Código Respuesta: </td> <td>#{votoBean.codigoRespuesta}</td></tr>
+		<tr><td>Id Voto: </td> <td>#{votoBean.idVoto}</td></tr>
+		<tr><td>Id Proceso electoral: </td> <td>#{votoBean.idProcesoElectoral}</td></tr>
+		<tr><td>Marca Tiempo Voto: </td> <td>#{votoBean.marcaTiempo}</td></tr>
+		<tr><td>Número DNI: </td> <td>#{censoBean.numeroDNI}</td></tr>
+		</table>
+    </h:body>
+</html>
