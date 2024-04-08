@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Página Listado de Votos </title>
+    </h:head>
+    <h:body>
+    <p>Lista de votos del proceso electoral #{votoBean.idProcesoElectoral} </p>
+        <table border="1">    
+		<thead> 
+		<tr><th>idVoto</th> 
+		<th>idCircunscripcion</th>
+		<th>idMesaElectoral</th>
+		<th>idProcesoElectoral</th>
+		<th>Candidato/a Votado/a</th>
+		<th>Marca de Tiempo</th>
+		<th>codRespuesta</th>
+		</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="voto" items="#{sessionScope.votosObtenidos}">
+				<tr>
+				<td>#{voto.idVoto}</td>
+				<td>#{voto.idCircunscripcion}</td>
+				<td>#{voto.idMesaElectoral}</td>
+				<td>#{voto.idProcesoElectoral}</td>
+				<td>#{voto.nombreCandidatoVotado}</td>
+				<td>#{voto.marcaTiempo}</td>
+				<td>#{voto.codigoRespuesta}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+		</table>
+		<p></p>
+        
+		<h:form> <h:commandButton id="back" value="Volver" action="testbd" /> </h:form>
+    </h:body>
+</html>
