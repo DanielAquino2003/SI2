@@ -7,18 +7,19 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
     </TestPlan>
     <hashTree>
       <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Valores por Defecto para Petición HTTP">
         <stringProp name="HTTPSampler.domain">10.4.1.2</stringProp>
         <stringProp name="HTTPSampler.port">8080</stringProp>
-        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
           <collectionProp name="Arguments.arguments"/>
         </elementProp>
         <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="samples" elementType="Argument">
             <stringProp name="Argument.name">samples</stringProp>
@@ -48,7 +49,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="P1-base">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="P1-base" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -59,7 +60,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="indiceCandidatoVotado">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="indiceCandidatoVotado" enabled="true">
           <stringProp name="maximumValue">3</stringProp>
           <stringProp name="minimumValue">1</stringProp>
           <stringProp name="outputFormat"></stringProp>
@@ -68,7 +69,7 @@
           <stringProp name="variableName">indiceCandidatoVotado</stringProp>
         </RandomVariableConfig>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idCircunscripcion">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idCircunscripcion" enabled="true">
           <stringProp name="CounterConfig.start">1</stringProp>
           <stringProp name="CounterConfig.end"></stringProp>
           <stringProp name="CounterConfig.incr">5</stringProp>
@@ -77,7 +78,7 @@
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idMesaElectoral">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idMesaElectoral" enabled="true">
           <stringProp name="CounterConfig.start">1</stringProp>
           <stringProp name="CounterConfig.end"></stringProp>
           <stringProp name="CounterConfig.incr">5</stringProp>
@@ -86,7 +87,7 @@
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set" enabled="true">
           <stringProp name="delimiter">|</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">datagen/fichero.csv</stringProp>
@@ -98,18 +99,18 @@
           <stringProp name="variableNames">numeroDNI,nombre,fechaNacimiento,anioCenso,codigoAutorizacion</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-base Get">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-base Get" enabled="true">
           <stringProp name="HTTPSampler.path">/P1-base/testbd.xhtml</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="idFormulario">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="idFormulario" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <stringProp name="RegexExtractor.refname">idFormulario</stringProp>
           <stringProp name="RegexExtractor.regex">&lt;h2&gt;Complete la información sobre el voto:&lt;/h2&gt;[\s]*&lt;form id=&quot;([^&quot;]+)&quot; name=&quot;([^&quot;]+)&quot; method=&quot;post&quot; action=&quot;([^&quot;]+)&quot;.*&gt;</stringProp>
@@ -119,7 +120,7 @@
           <stringProp name="RegexExtractor.match_number">0</stringProp>
         </RegexExtractor>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="jsfViewState">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="jsfViewState" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <stringProp name="RegexExtractor.refname">jsfViewState</stringProp>
           <stringProp name="RegexExtractor.regex">&lt;input type=&quot;hidden&quot; name=&quot;jakarta\.faces\.ViewState&quot; id=&quot;([^&quot;]+)\:jakarta\.faces\.ViewState\:0&quot; value=&quot;([^&quot;]+)&quot;.*/&gt;</stringProp>
@@ -129,7 +130,7 @@
           <stringProp name="RegexExtractor.match_number">0</stringProp>
         </RegexExtractor>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="urlPost">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="urlPost" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <stringProp name="RegexExtractor.refname">urlpost_form</stringProp>
           <stringProp name="RegexExtractor.regex">&lt;h2&gt;Complete la información sobre el voto:&lt;/h2&gt;[\s]*&lt;form id=&quot;([^&quot;]+)&quot; name=&quot;([^&quot;]+)&quot; method=&quot;post&quot; action=&quot;([^&quot;]+)&quot;.*&gt;</stringProp>
@@ -139,13 +140,13 @@
           <stringProp name="RegexExtractor.match_number">0</stringProp>
         </RegexExtractor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-base Post">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-base Post" enabled="true">
           <stringProp name="HTTPSampler.path">${urlpost_form}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
             <collectionProp name="Arguments.arguments">
               <elementProp name="${idFormulario}:idMesaElectoral" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">true</boolProp>
@@ -250,7 +251,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="P1-ws">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="P1-ws" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -261,7 +262,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="indiceCandidatoVotado">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="indiceCandidatoVotado" enabled="true">
           <stringProp name="maximumValue">3</stringProp>
           <stringProp name="minimumValue">1</stringProp>
           <stringProp name="outputFormat"></stringProp>
@@ -270,7 +271,7 @@
           <stringProp name="variableName">indiceCandidatoVotado</stringProp>
         </RandomVariableConfig>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idCircunscripcion">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idCircunscripcion" enabled="true">
           <stringProp name="CounterConfig.start">2</stringProp>
           <stringProp name="CounterConfig.end"></stringProp>
           <stringProp name="CounterConfig.incr">5</stringProp>
@@ -279,7 +280,7 @@
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idMesaElectoral">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idMesaElectoral" enabled="true">
           <stringProp name="CounterConfig.start">2</stringProp>
           <stringProp name="CounterConfig.end"></stringProp>
           <stringProp name="CounterConfig.incr">5</stringProp>
@@ -288,7 +289,7 @@
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set" enabled="true">
           <stringProp name="delimiter">|</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">datagen/fichero.csv</stringProp>
@@ -300,18 +301,18 @@
           <stringProp name="variableNames">numeroDNI,nombre,fechaNacimiento,anioCenso,codigoAutorizacion</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-ws Get">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-ws Get" enabled="true">
           <stringProp name="HTTPSampler.path">/P1-ws/testbd.xhtml</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="idFormulario">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="idFormulario" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <stringProp name="RegexExtractor.refname">idFormulario</stringProp>
           <stringProp name="RegexExtractor.regex">&lt;h2&gt;Complete la información sobre el voto:&lt;/h2&gt;[\s]*&lt;form id=&quot;([^&quot;]+)&quot; name=&quot;([^&quot;]+)&quot; method=&quot;post&quot; action=&quot;([^&quot;]+)&quot;.*&gt;</stringProp>
@@ -321,7 +322,7 @@
           <stringProp name="RegexExtractor.match_number">0</stringProp>
         </RegexExtractor>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="jsfViewState">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="jsfViewState" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <stringProp name="RegexExtractor.refname">jsfViewState</stringProp>
           <stringProp name="RegexExtractor.regex">&lt;input type=&quot;hidden&quot; name=&quot;jakarta\.faces\.ViewState&quot; id=&quot;([^&quot;]+)\:jakarta\.faces\.ViewState\:0&quot; value=&quot;([^&quot;]+)&quot;.*/&gt;</stringProp>
@@ -331,7 +332,7 @@
           <stringProp name="RegexExtractor.match_number">0</stringProp>
         </RegexExtractor>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="urlPost">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="urlPost" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <stringProp name="RegexExtractor.refname">urlpost_form</stringProp>
           <stringProp name="RegexExtractor.regex">&lt;h2&gt;Complete la información sobre el voto:&lt;/h2&gt;[\s]*&lt;form id=&quot;([^&quot;]+)&quot; name=&quot;([^&quot;]+)&quot; method=&quot;post&quot; action=&quot;([^&quot;]+)&quot;.*&gt;</stringProp>
@@ -341,13 +342,13 @@
           <stringProp name="RegexExtractor.match_number">0</stringProp>
         </RegexExtractor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-ws Post">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-ws Post" enabled="true">
           <stringProp name="HTTPSampler.path">${urlpost_form}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
             <collectionProp name="Arguments.arguments">
               <elementProp name="${idFormulario}:idMesaElectoral" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">true</boolProp>
@@ -452,7 +453,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="P1-ejb">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="P1-ejb" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -463,7 +464,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="indiceCandidatoVotado">
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="indiceCandidatoVotado" enabled="true">
           <stringProp name="maximumValue">3</stringProp>
           <stringProp name="minimumValue">1</stringProp>
           <stringProp name="outputFormat"></stringProp>
@@ -472,7 +473,7 @@
           <stringProp name="variableName">indiceCandidatoVotado</stringProp>
         </RandomVariableConfig>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idCircunscripcion">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idCircunscripcion" enabled="true">
           <stringProp name="CounterConfig.start">3</stringProp>
           <stringProp name="CounterConfig.end"></stringProp>
           <stringProp name="CounterConfig.incr">5</stringProp>
@@ -481,7 +482,7 @@
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idMesaElectoral">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idMesaElectoral" enabled="true">
           <stringProp name="CounterConfig.start">3</stringProp>
           <stringProp name="CounterConfig.end"></stringProp>
           <stringProp name="CounterConfig.incr">5</stringProp>
@@ -490,7 +491,7 @@
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set" enabled="true">
           <stringProp name="delimiter">|</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">datagen/fichero.csv</stringProp>
@@ -502,13 +503,13 @@
           <stringProp name="variableNames">numeroDNI,nombre,fechaNacimiento,anioCenso,codigoAutorizacion</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-ejb Get">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-ejb Get" enabled="true">
           <stringProp name="HTTPSampler.path">/P1-ejb/testbd.xhtml</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
         </HTTPSamplerProxy>
@@ -543,13 +544,13 @@
           <stringProp name="RegexExtractor.match_number">0</stringProp>
         </RegexExtractor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-ejb Post">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P1-ejb Post" enabled="true">
           <stringProp name="HTTPSampler.path">${urlpost_form}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
             <collectionProp name="Arguments.arguments">
               <elementProp name="${idFormulario}:idMesaElectoral" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">true</boolProp>
@@ -654,7 +655,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Informe Agregado">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Informe Agregado" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -691,7 +692,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Ver Árbol de Resultados">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Ver Árbol de Resultados" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
