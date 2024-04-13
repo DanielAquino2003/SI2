@@ -1,0 +1,1357 @@
+[2024-04-12T15:14:54.201032+02:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/usr/lib/jvm/jdk-21-oracle-x64/bin/java
+-cp
+/opt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2024-04-12T13:14:53.277256206Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/opt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/opt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/opt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/opt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/opt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/opt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/opt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/opt/glassfish7/glassfish
+-Djava.library.path=/opt/glassfish7/glassfish/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/opt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/opt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/opt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2024-04-12T15:15:02.180404+02:00] [GF 7.0.9] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /opt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2024-04-12T15:15:02.285525+02:00] [GF 7.0.9] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0)]]
+
+[2024-04-12T15:15:02.782514+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-12T15:15:02.788883+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-12T15:15:02.812569+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2024-04-12T15:15:03.621190+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 55ms - bound to [/0.0.0.0:8080]]]
+
+[2024-04-12T15:15:03.690411+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 6ms - bound to [/0.0.0.0:8181]]]
+
+[2024-04-12T15:15:03.731724+02:00] [GF 7.0.9] [WARNING] [] [org.glassfish.grizzly.config.GenericGrizzlyListener] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 900] [[
+  HTTP/2 (enabled by default) is unsupported with port unification and will be disabled for network listener admin-listener.]]
+
+[2024-04-12T15:15:03.772456+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 4ms - bound to [/0.0.0.0:4848]]]
+
+[2024-04-12T15:15:04.113736+02:00] [GF 7.0.9] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2024-04-12T15:15:04.322652+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2024-04-12T15:15:04.545293+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 4ms - bound to [/0.0.0.0:3700]]]
+
+[2024-04-12T15:15:04.690372+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0) startup time: Embedded (6,889 ms), startup services (2,729 ms), total (9,618 ms)]]
+
+[2024-04-12T15:15:04.701570+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00018] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Total startup time including CLI: 11,424 ms]]
+
+[2024-04-12T15:15:05.020020+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 5ms - bound to [/0.0.0.0:7676]]]
+
+[2024-04-12T15:15:05.562816+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00024] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  Creating a SecureRMIServerSocketFactory @ 0.0.0.0 with ssl config = GlassFishConfigBean.org.glassfish.grizzly.config.dom.Ssl]]
+
+[2024-04-12T15:15:05.565558+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@3e27a332]]
+
+[2024-04-12T15:15:05.577005+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-12T15:15:05.624623+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@3e27a332]]
+
+[2024-04-12T15:15:05.628039+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-12T15:15:05.770597+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00025] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLServerSocket /0.0.0.0:8686 and [SSL: ServerSocket[addr=/0.0.0.0,localport=8686]] created]]
+
+[2024-04-12T15:15:06.156262+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://si2srv01:8686/jndi/rmi://si2srv01:8686/jmxrmi]]
+
+[2024-04-12T15:46:05.643263+02:00] [GF 7.0.9] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2024-04-12T15:46:46.344970+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2024-04-12T15:46:46.351499+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2024-04-12T15:46:46.353593+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2024-04-12T15:46:46.444203+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2024-04-12T15:46:46.574217+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10010] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Web service endpoint deployment events listener registered successfully.]]
+
+[2024-04-12T15:46:50.280327+02:00] [GF 7.0.9] [INFO] [jts.startup_msg] [jakarta.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [3700]]]
+
+[2024-04-12T15:46:50.620496+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.enterprise.iiop.impl.GlassFishORBManager] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  ORB initialization succeeded: com.sun.corba.ee.impl.orb.ORBImpl@3c25b406]]
+
+[2024-04-12T15:46:51.444269+02:00] [GF 7.0.9] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Portable JNDI names for EJB VotoDAOBean: [java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean, java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean!ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-12T15:46:51.444994+02:00] [GF 7.0.9] [INFO] [AS-EJB-00055] [jakarta.enterprise.ejb.container] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB VotoDAOBean: [ssii2.servicio.dao.VotoDAORemote#ssii2.servicio.dao.VotoDAORemote, ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-12T15:46:51.563468+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  WELD-000900: 5.1.1 (SP2)]]
+
+[2024-04-12T15:46:52.663918+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2024-04-12T15:46:54.181078+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  P1-ejb-servidor was successfully deployed in 9,834 milliseconds.]]
+
+[2024-04-12T15:47:13.436084+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2024-04-12T15:47:13.439203+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2024-04-12T15:47:13.444598+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2024-04-12T15:47:13.476753+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2024-04-12T15:47:13.478594+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2024-04-12T15:47:13.719694+02:00] [GF 7.0.9] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2024-04-12T15:47:13.721018+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2024-04-12T15:47:14.252348+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed VotoDAOWS
+ listening at address at http://si2srv01:8080/P1-ws-ws/VotoDAOWSService.]]
+
+[2024-04-12T15:47:14.256158+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10001] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading WS-TX Services. Please wait.]]
+
+[2024-04-12T15:47:14.689343+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationRequesterPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationRequesterPortType.]]
+
+[2024-04-12T15:47:14.690406+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationPortTypeRPCPortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationPortTypeRPC11.]]
+
+[2024-04-12T15:47:14.692026+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed CoordinatorPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/CoordinatorPortType.]]
+
+[2024-04-12T15:47:14.692631+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationRequesterPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationRequesterPortType11.]]
+
+[2024-04-12T15:47:14.696338+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed ParticipantPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/ParticipantPortType11.]]
+
+[2024-04-12T15:47:14.696997+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed ParticipantPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/ParticipantPortType.]]
+
+[2024-04-12T15:47:14.698049+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationPortTypeRPC.]]
+
+[2024-04-12T15:47:14.702395+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed CoordinatorPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/CoordinatorPortType11.]]
+
+[2024-04-12T15:47:14.703585+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@4d8d7532[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/wstx-services/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/wstx-services//
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=0, pathTimestamps.size=0, resourceEntryCache.size=0]]]
+
+[2024-04-12T15:47:17.052420+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [wstx-services] at [/__wstx-services]]]
+
+[2024-04-12T15:47:17.056012+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10002] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  WS-TX Services successfully started.]]
+
+[2024-04-12T15:47:17.058356+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@6cda2c89[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=16, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-12T15:47:17.464233+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [P1-ws-ws] at [/P1-ws-ws]]]
+
+[2024-04-12T15:47:17.484171+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  P1-ws-ws was successfully deployed in 4,696 milliseconds.]]
+
+[2024-04-12T16:09:39.914410+02:00] [GF 7.0.9] [WARNING] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=27 _ThreadName=http-listener-1(3)] [levelValue: 900] [[
+  Probably the pool org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null] is not yet initialized (lazy-loading), trying to check ...]]
+
+[2024-04-12T16:09:40.852596+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=27 _ThreadName=http-listener-1(3)] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+
+[2024-04-12T16:27:45.690865+02:00] [GF 7.0.9] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Portable JNDI names for EJB VotoDAOBean: [java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean, java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean!ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-12T16:27:45.691540+02:00] [GF 7.0.9] [INFO] [AS-EJB-00055] [jakarta.enterprise.ejb.container] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB VotoDAOBean: [ssii2.servicio.dao.VotoDAORemote#ssii2.servicio.dao.VotoDAORemote, ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-12T16:27:45.796924+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2024-04-12T16:27:46.178050+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  P1-ejb-servidor was successfully deployed in 1,111 milliseconds.]]
+
+[2024-04-12T16:28:52.633026+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=43 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@632f34d3[name=/P1-ws-ws], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/P1-ws-ws/
+][delegate=true, context=/P1-ws-ws, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=28, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-12T16:40:29.446330+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=200 _ThreadName=Thread-42] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2024-04-12T16:40:29.485027+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=200 _ThreadName=Thread-42] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2024-04-12T16:40:29.547677+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=200 _ThreadName=Thread-42] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2024-04-12T16:40:29.550182+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=200 _ThreadName=Thread-42] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2024-04-12T16:40:29.616762+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=205 _ThreadName=RunLevelControllerThread-1712932829583] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@b8735a0[name=/__wstx-services], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/wstx-services/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/wstx-services//
+file:/opt/glassfish7/glassfish/domains/domain1/generated/wstx-services/
+][delegate=true, context=/__wstx-services, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=27, pathTimestamps.size=0, resourceEntryCache.size=0]]]
+
+[2024-04-12T16:40:29.715693+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=203 _ThreadName=RunLevelControllerThread-1712932829580] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
+
+[2024-04-12T16:40:29.745388+02:00] [GF 7.0.9] [INFO] [ra.stop-successful] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=207 _ThreadName=Thread-49] [levelValue: 800] [[
+  RAR7094: __cp_jdbc_ra shutdown successful.]]
+
+[2024-04-12T16:40:29.770447+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=200 _ThreadName=Thread-42] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2024-04-12T16:40:29.778473+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=15 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2024-04-12T16:40:35.280267+02:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/usr/lib/jvm/jdk-21-oracle-x64/bin/java
+-cp
+/opt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2024-04-12T14:40:34.600857642Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/opt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/opt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/opt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/opt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/opt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/opt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/opt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/opt/glassfish7/glassfish
+-Djava.library.path=/opt/glassfish7/glassfish/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/opt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/opt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/opt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2024-04-12T16:40:41.785680+02:00] [GF 7.0.9] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /opt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2024-04-12T16:40:41.885775+02:00] [GF 7.0.9] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0)]]
+
+[2024-04-12T16:40:42.291067+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-12T16:40:42.300486+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-12T16:40:42.320372+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2024-04-12T16:40:42.991719+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 45ms - bound to [/0.0.0.0:8080]]]
+
+[2024-04-12T16:40:43.048409+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 2ms - bound to [/0.0.0.0:8181]]]
+
+[2024-04-12T16:40:43.087076+02:00] [GF 7.0.9] [WARNING] [] [org.glassfish.grizzly.config.GenericGrizzlyListener] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 900] [[
+  HTTP/2 (enabled by default) is unsupported with port unification and will be disabled for network listener admin-listener.]]
+
+[2024-04-12T16:40:43.115296+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 2ms - bound to [/0.0.0.0:4848]]]
+
+[2024-04-12T16:40:43.412485+02:00] [GF 7.0.9] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2024-04-12T16:40:43.605449+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2024-04-12T16:40:43.788440+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 4ms - bound to [/0.0.0.0:3700]]]
+
+[2024-04-12T16:40:43.920854+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0) startup time: Embedded (5,680 ms), startup services (2,319 ms), total (7,999 ms)]]
+
+[2024-04-12T16:40:43.926244+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00018] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Total startup time including CLI: 9,325 ms]]
+
+[2024-04-12T16:40:44.226788+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 5ms - bound to [/0.0.0.0:7676]]]
+
+[2024-04-12T16:40:44.707734+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00024] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  Creating a SecureRMIServerSocketFactory @ 0.0.0.0 with ssl config = GlassFishConfigBean.org.glassfish.grizzly.config.dom.Ssl]]
+
+[2024-04-12T16:40:44.719692+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@3e27a332]]
+
+[2024-04-12T16:40:44.721830+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-12T16:40:44.765599+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@3e27a332]]
+
+[2024-04-12T16:40:44.772865+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-12T16:40:44.919519+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00025] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLServerSocket /0.0.0.0:8686 and [SSL: ServerSocket[addr=/0.0.0.0,localport=8686]] created]]
+
+[2024-04-12T16:40:45.304339+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://si2srv01:8686/jndi/rmi://si2srv01:8686/jmxrmi]]
+
+[2024-04-12T16:51:46.726401+02:00] [GF 7.0.9] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2024-04-12T16:51:47.328339+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=88 _ThreadName=Thread-21] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2024-04-12T16:51:47.351139+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=88 _ThreadName=Thread-21] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2024-04-12T16:51:47.408605+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=88 _ThreadName=Thread-21] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2024-04-12T16:51:47.410775+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=88 _ThreadName=Thread-21] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2024-04-12T16:51:47.590201+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=91 _ThreadName=RunLevelControllerThread-1712933507440] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
+
+[2024-04-12T16:51:47.636793+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=88 _ThreadName=Thread-21] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2024-04-12T16:51:47.640048+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=15 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2024-04-12T16:53:01.460783+02:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/usr/lib/jvm/jdk-21-oracle-x64/bin/java
+-cp
+/opt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2024-04-12T14:53:00.783160333Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/opt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/opt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/opt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/opt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/opt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/opt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/opt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/opt/glassfish7/glassfish
+-Djava.library.path=/opt/glassfish7/glassfish/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/opt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/opt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/opt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2024-04-12T16:53:08.009054+02:00] [GF 7.0.9] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /opt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2024-04-12T16:53:08.110215+02:00] [GF 7.0.9] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0)]]
+
+[2024-04-12T16:53:08.504102+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-12T16:53:08.507597+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-12T16:53:08.528912+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2024-04-12T16:53:09.148376+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 39ms - bound to [/0.0.0.0:8080]]]
+
+[2024-04-12T16:53:09.202564+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 4ms - bound to [/0.0.0.0:8181]]]
+
+[2024-04-12T16:53:09.241752+02:00] [GF 7.0.9] [WARNING] [] [org.glassfish.grizzly.config.GenericGrizzlyListener] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 900] [[
+  HTTP/2 (enabled by default) is unsupported with port unification and will be disabled for network listener admin-listener.]]
+
+[2024-04-12T16:53:09.282057+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 7ms - bound to [/0.0.0.0:4848]]]
+
+[2024-04-12T16:53:09.565249+02:00] [GF 7.0.9] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2024-04-12T16:53:09.781286+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2024-04-12T16:53:09.960235+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:3700]]]
+
+[2024-04-12T16:53:10.084874+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0) startup time: Embedded (5,761 ms), startup services (2,239 ms), total (8,000 ms)]]
+
+[2024-04-12T16:53:10.094281+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00018] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Total startup time including CLI: 9,310 ms]]
+
+[2024-04-12T16:53:10.383655+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 5ms - bound to [/0.0.0.0:7676]]]
+
+[2024-04-12T16:53:10.832795+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00024] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  Creating a SecureRMIServerSocketFactory @ 0.0.0.0 with ssl config = GlassFishConfigBean.org.glassfish.grizzly.config.dom.Ssl]]
+
+[2024-04-12T16:53:10.844920+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@3e27a332]]
+
+[2024-04-12T16:53:10.848521+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-12T16:53:10.893994+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@3e27a332]]
+
+[2024-04-12T16:53:10.896027+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-12T16:53:11.031007+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00025] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLServerSocket /0.0.0.0:8686 and [SSL: ServerSocket[addr=/0.0.0.0,localport=8686]] created]]
+
+[2024-04-12T16:53:11.422031+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://si2srv01:8686/jndi/rmi://si2srv01:8686/jmxrmi]]
+
+[2024-04-12T16:54:09.463998+02:00] [GF 7.0.9] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2024-04-12T16:54:11.990102+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10010] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Web service endpoint deployment events listener registered successfully.]]
+
+[2024-04-12T16:54:12.204135+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2024-04-12T16:54:12.207284+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2024-04-12T16:54:12.215045+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2024-04-12T16:54:12.324145+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2024-04-12T16:54:13.008274+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2024-04-12T16:54:13.014582+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2024-04-12T16:54:13.025318+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2024-04-12T16:54:13.082288+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2024-04-12T16:54:13.089951+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2024-04-12T16:54:13.545268+02:00] [GF 7.0.9] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2024-04-12T16:54:13.553049+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2024-04-12T16:54:14.762889+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed VotoDAOWS
+ listening at address at http://si2srv01:8080/P1-ws-ws/VotoDAOWSService.]]
+
+[2024-04-12T16:54:14.776567+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10001] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading WS-TX Services. Please wait.]]
+
+[2024-04-12T16:54:15.597364+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed CoordinatorPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/CoordinatorPortType11.]]
+
+[2024-04-12T16:54:15.604552+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationPortTypeRPC.]]
+
+[2024-04-12T16:54:15.605469+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed ParticipantPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/ParticipantPortType.]]
+
+[2024-04-12T16:54:15.607381+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationRequesterPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationRequesterPortType11.]]
+
+[2024-04-12T16:54:15.611842+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationPortTypeRPCPortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationPortTypeRPC11.]]
+
+[2024-04-12T16:54:15.613349+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed CoordinatorPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/CoordinatorPortType.]]
+
+[2024-04-12T16:54:15.616598+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationRequesterPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationRequesterPortType.]]
+
+[2024-04-12T16:54:15.620687+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed ParticipantPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/ParticipantPortType11.]]
+
+[2024-04-12T16:54:15.624058+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@5c2760b7[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/wstx-services/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/wstx-services//
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=0, pathTimestamps.size=0, resourceEntryCache.size=0]]]
+
+[2024-04-12T16:54:17.465799+02:00] [GF 7.0.9] [INFO] [jts.startup_msg] [jakarta.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [3700]]]
+
+[2024-04-12T16:54:17.996507+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.enterprise.iiop.impl.GlassFishORBManager] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  ORB initialization succeeded: com.sun.corba.ee.impl.orb.ORBImpl@59e2bbd4]]
+
+[2024-04-12T16:54:18.595941+02:00] [GF 7.0.9] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Portable JNDI names for EJB VotoDAOBean: [java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean, java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean!ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-12T16:54:18.596327+02:00] [GF 7.0.9] [INFO] [AS-EJB-00055] [jakarta.enterprise.ejb.container] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB VotoDAOBean: [ssii2.servicio.dao.VotoDAORemote#ssii2.servicio.dao.VotoDAORemote, ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-12T16:54:18.694105+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  WELD-000900: 5.1.1 (SP2)]]
+
+[2024-04-12T16:54:19.879193+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2024-04-12T16:54:20.129670+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [wstx-services] at [/__wstx-services]]]
+
+[2024-04-12T16:54:20.153780+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10002] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  WS-TX Services successfully started.]]
+
+[2024-04-12T16:54:20.158967+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@2c223630[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=36, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-12T16:54:20.859589+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [P1-ws-ws] at [/P1-ws-ws]]]
+
+[2024-04-12T16:54:21.185711+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  P1-ws-ws was successfully deployed in 11,128 milliseconds.]]
+
+[2024-04-12T16:54:22.184910+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  P1-ejb-servidor was successfully deployed in 12,128 milliseconds.]]
+
+[2024-04-12T16:58:09.677292+02:00] [GF 7.0.9] [WARNING] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=25 _ThreadName=http-listener-1(1)] [levelValue: 900] [[
+  Probably the pool org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null] is not yet initialized (lazy-loading), trying to check ...]]
+
+[2024-04-12T16:58:10.684647+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=25 _ThreadName=http-listener-1(1)] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+
+[2024-04-12T17:04:44.333335+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@4ea4197e[name=/P1-ws-ws], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/P1-ws-ws/
+][delegate=true, context=/P1-ws-ws, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=28, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-12T17:08:52.459693+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=150 _ThreadName=Thread-35] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2024-04-12T17:08:52.472849+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=150 _ThreadName=Thread-35] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2024-04-12T17:08:52.520358+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=150 _ThreadName=Thread-35] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2024-04-12T17:08:52.521986+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=150 _ThreadName=Thread-35] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2024-04-12T17:08:52.562028+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=153 _ThreadName=RunLevelControllerThread-1712934532539] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@70ab5cf0[name=/__wstx-services], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/wstx-services/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/wstx-services//
+file:/opt/glassfish7/glassfish/domains/domain1/generated/wstx-services/
+][delegate=true, context=/__wstx-services, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=27, pathTimestamps.size=0, resourceEntryCache.size=0]]]
+
+[2024-04-12T17:08:52.633925+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=151 _ThreadName=RunLevelControllerThread-1712934532525] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
+
+[2024-04-12T17:08:52.682507+02:00] [GF 7.0.9] [INFO] [ra.stop-successful] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=156 _ThreadName=Thread-41] [levelValue: 800] [[
+  RAR7094: __cp_jdbc_ra shutdown successful.]]
+
+[2024-04-12T17:08:52.692985+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=150 _ThreadName=Thread-35] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2024-04-12T17:08:52.695792+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=15 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2024-04-12T17:09:13.171107+02:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/usr/lib/jvm/jdk-21-oracle-x64/bin/java
+-cp
+/opt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2024-04-12T15:09:12.503889558Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/opt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/opt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/opt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/opt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/opt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/opt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/opt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/opt/glassfish7/glassfish
+-Djava.library.path=/opt/glassfish7/glassfish/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/opt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/opt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/opt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2024-04-12T17:09:19.656464+02:00] [GF 7.0.9] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /opt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2024-04-12T17:09:19.752673+02:00] [GF 7.0.9] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0)]]
+
+[2024-04-12T17:09:20.141775+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-12T17:09:20.149723+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-12T17:09:20.169744+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2024-04-12T17:09:20.784950+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 40ms - bound to [/0.0.0.0:8080]]]
+
+[2024-04-12T17:09:20.839549+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 2ms - bound to [/0.0.0.0:8181]]]
+
+[2024-04-12T17:09:20.881353+02:00] [GF 7.0.9] [WARNING] [] [org.glassfish.grizzly.config.GenericGrizzlyListener] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 900] [[
+  HTTP/2 (enabled by default) is unsupported with port unification and will be disabled for network listener admin-listener.]]
+
+[2024-04-12T17:09:20.912162+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 2ms - bound to [/0.0.0.0:4848]]]
+
+[2024-04-12T17:09:21.201438+02:00] [GF 7.0.9] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2024-04-12T17:09:21.405857+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2024-04-12T17:09:21.612344+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:3700]]]
+
+[2024-04-12T17:09:21.762065+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0) startup time: Embedded (5,675 ms), startup services (2,294 ms), total (7,969 ms)]]
+
+[2024-04-12T17:09:21.769280+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00018] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Total startup time including CLI: 9,265 ms]]
+
+[2024-04-12T17:09:22.059694+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 2ms - bound to [/0.0.0.0:7676]]]
+
+[2024-04-12T17:09:22.514393+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00024] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  Creating a SecureRMIServerSocketFactory @ 0.0.0.0 with ssl config = GlassFishConfigBean.org.glassfish.grizzly.config.dom.Ssl]]
+
+[2024-04-12T17:09:22.521680+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@3e27a332]]
+
+[2024-04-12T17:09:22.527465+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-12T17:09:22.577927+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@3e27a332]]
+
+[2024-04-12T17:09:22.579579+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-12T17:09:22.736211+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00025] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLServerSocket /0.0.0.0:8686 and [SSL: ServerSocket[addr=/0.0.0.0,localport=8686]] created]]
+
+[2024-04-12T17:09:23.174813+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=56 _ThreadName=Thread-7] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://si2srv01:8686/jndi/rmi://si2srv01:8686/jmxrmi]]
+
+[2024-04-13T10:46:00.686974+02:00] [GF 7.0.9] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=43 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2024-04-13T10:46:01.315895+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=108 _ThreadName=Thread-25] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2024-04-13T10:46:01.352325+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=108 _ThreadName=Thread-25] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2024-04-13T10:46:01.423186+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=108 _ThreadName=Thread-25] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2024-04-13T10:46:01.427605+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=108 _ThreadName=Thread-25] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2024-04-13T10:46:01.598225+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=113 _ThreadName=RunLevelControllerThread-1712997961455] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
+
+[2024-04-13T10:46:01.643124+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=108 _ThreadName=Thread-25] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2024-04-13T10:46:01.647139+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=15 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2024-04-13T10:46:13.569464+02:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/usr/lib/jvm/jdk-21-oracle-x64/bin/java
+-cp
+/opt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2024-04-13T08:46:12.804390741Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/opt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/opt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/opt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/opt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/opt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/opt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/opt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/opt/glassfish7/glassfish
+-Djava.library.path=/opt/glassfish7/glassfish/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/opt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/opt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/opt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2024-04-13T10:46:20.334565+02:00] [GF 7.0.9] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /opt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2024-04-13T10:46:20.442599+02:00] [GF 7.0.9] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0)]]
+
+[2024-04-13T10:46:20.880293+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-13T10:46:20.883890+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2024-04-13T10:46:20.913831+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2024-04-13T10:46:21.602584+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 43ms - bound to [/0.0.0.0:8080]]]
+
+[2024-04-13T10:46:21.664475+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:8181]]]
+
+[2024-04-13T10:46:21.706012+02:00] [GF 7.0.9] [WARNING] [] [org.glassfish.grizzly.config.GenericGrizzlyListener] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 900] [[
+  HTTP/2 (enabled by default) is unsupported with port unification and will be disabled for network listener admin-listener.]]
+
+[2024-04-13T10:46:21.743241+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:4848]]]
+
+[2024-04-13T10:46:22.078972+02:00] [GF 7.0.9] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2024-04-13T10:46:22.296018+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2024-04-13T10:46:22.497054+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 6ms - bound to [/0.0.0.0:3700]]]
+
+[2024-04-13T10:46:22.647426+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish 7.0.9 (commit: 5860e42c2edeb9f3b46428fcf9dab95790a9a3f0) startup time: Embedded (5,883 ms), startup services (2,508 ms), total (8,391 ms)]]
+
+[2024-04-13T10:46:22.655668+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00018] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Total startup time including CLI: 9,851 ms]]
+
+[2024-04-13T10:46:22.977222+02:00] [GF 7.0.9] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 5ms - bound to [/0.0.0.0:7676]]]
+
+[2024-04-13T10:46:23.470126+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00024] [jakarta.enterprise.system.jmx] [tid: _ThreadID=55 _ThreadName=Thread-7] [levelValue: 800] [[
+  Creating a SecureRMIServerSocketFactory @ 0.0.0.0 with ssl config = GlassFishConfigBean.org.glassfish.grizzly.config.dom.Ssl]]
+
+[2024-04-13T10:46:23.481117+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=55 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@b9b035d]]
+
+[2024-04-13T10:46:23.485305+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=55 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-13T10:46:23.526955+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=55 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLParams =org.glassfish.admin.mbeanserver.ssl.SSLParams@b9b035d]]
+
+[2024-04-13T10:46:23.532826+02:00] [GF 7.0.9] [WARNING] [NCLS-JMX-00020] [jakarta.enterprise.system.jmx] [tid: _ThreadID=55 _ThreadName=Thread-7] [levelValue: 900] [[
+  All SSL cipher suites disabled for network-listener(s).  Using SSL implementation specific defaults]]
+
+[2024-04-13T10:46:23.684526+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00025] [jakarta.enterprise.system.jmx] [tid: _ThreadID=55 _ThreadName=Thread-7] [levelValue: 800] [[
+  SSLServerSocket /0.0.0.0:8686 and [SSL: ServerSocket[addr=/0.0.0.0,localport=8686]] created]]
+
+[2024-04-13T10:46:24.077385+02:00] [GF 7.0.9] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=55 _ThreadName=Thread-7] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://si2srv01:8686/jndi/rmi://si2srv01:8686/jmxrmi]]
+
+[2024-04-13T10:59:53.246175+02:00] [GF 7.0.9] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2024-04-13T11:00:22.013369+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2024-04-13T11:00:22.014456+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2024-04-13T11:00:22.021846+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2024-04-13T11:00:22.129604+02:00] [GF 7.0.9] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2024-04-13T11:00:22.292181+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10010] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Web service endpoint deployment events listener registered successfully.]]
+
+[2024-04-13T11:00:25.540840+02:00] [GF 7.0.9] [INFO] [jts.startup_msg] [jakarta.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [3700]]]
+
+[2024-04-13T11:00:25.906186+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.enterprise.iiop.impl.GlassFishORBManager] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  ORB initialization succeeded: com.sun.corba.ee.impl.orb.ORBImpl@70345878]]
+
+[2024-04-13T11:00:26.320532+02:00] [GF 7.0.9] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Portable JNDI names for EJB VotoDAOBean: [java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean, java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean!ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-13T11:00:26.321289+02:00] [GF 7.0.9] [INFO] [AS-EJB-00055] [jakarta.enterprise.ejb.container] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB VotoDAOBean: [ssii2.servicio.dao.VotoDAORemote#ssii2.servicio.dao.VotoDAORemote, ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-13T11:00:26.443332+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  WELD-000900: 5.1.1 (SP2)]]
+
+[2024-04-13T11:00:27.287236+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2024-04-13T11:00:29.118286+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  P1-ejb-servidor was successfully deployed in 9,322 milliseconds.]]
+
+[2024-04-13T11:00:37.008914+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2024-04-13T11:00:37.019005+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2024-04-13T11:00:37.020922+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2024-04-13T11:00:37.050058+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2024-04-13T11:00:37.057307+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2024-04-13T11:00:37.315595+02:00] [GF 7.0.9] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2024-04-13T11:00:37.317291+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2024-04-13T11:00:37.859574+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed VotoDAOWS
+ listening at address at http://si2srv01:8080/P1-ws-ws/VotoDAOWSService.]]
+
+[2024-04-13T11:00:37.868975+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10001] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading WS-TX Services. Please wait.]]
+
+[2024-04-13T11:00:38.613763+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationPortTypeRPC.]]
+
+[2024-04-13T11:00:38.614908+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed CoordinatorPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/CoordinatorPortType11.]]
+
+[2024-04-13T11:00:38.616041+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed ParticipantPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/ParticipantPortType.]]
+
+[2024-04-13T11:00:38.617058+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationPortTypeRPCPortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationPortTypeRPC11.]]
+
+[2024-04-13T11:00:38.619070+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed ParticipantPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/ParticipantPortType11.]]
+
+[2024-04-13T11:00:38.621355+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationRequesterPortTypePortImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationRequesterPortType11.]]
+
+[2024-04-13T11:00:38.622276+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed CoordinatorPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/CoordinatorPortType.]]
+
+[2024-04-13T11:00:38.629729+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed RegistrationRequesterPortTypeImpl
+ listening at address at http://si2srv01:8080/__wstx-services/RegistrationRequesterPortType.]]
+
+[2024-04-13T11:00:38.630870+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@7ee6e17c[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/wstx-services/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/wstx-services//
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=0, pathTimestamps.size=0, resourceEntryCache.size=0]]]
+
+[2024-04-13T11:00:41.219051+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading application [wstx-services] at [/__wstx-services]]]
+
+[2024-04-13T11:00:41.229219+02:00] [GF 7.0.9] [INFO] [AS-WSMETROGLUE-10002] [jakarta.enterprise.webservices.metroglue] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  WS-TX Services successfully started.]]
+
+[2024-04-13T11:00:41.231924+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@18f6e03f[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=16, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-13T11:00:41.642074+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading application [P1-ws-ws] at [/P1-ws-ws]]]
+
+[2024-04-13T11:00:41.669749+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  P1-ws-ws was successfully deployed in 5,453 milliseconds.]]
+
+[2024-04-13T11:02:39.276175+02:00] [GF 7.0.9] [WARNING] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=93 _ThreadName=p: thread-pool-1; w: 5] [levelValue: 900] [[
+  Probably the pool org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null] is not yet initialized (lazy-loading), trying to check ...]]
+
+[2024-04-13T11:02:40.194348+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=93 _ThreadName=p: thread-pool-1; w: 5] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+
+[2024-04-13T11:18:31.685826+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=43 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@7673edca[name=/P1-ws-ws], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/P1-ws-ws/
+][delegate=true, context=/P1-ws-ws, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=28, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-13T11:18:48.121701+02:00] [GF 7.0.9] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Portable JNDI names for EJB VotoDAOBean: [java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean, java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean!ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-13T11:18:48.128994+02:00] [GF 7.0.9] [INFO] [AS-EJB-00055] [jakarta.enterprise.ejb.container] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB VotoDAOBean: [ssii2.servicio.dao.VotoDAORemote#ssii2.servicio.dao.VotoDAORemote, ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-13T11:18:48.240279+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2024-04-13T11:18:48.609174+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  P1-ejb-servidor was successfully deployed in 1,147 milliseconds.]]
+
+[2024-04-13T11:18:53.891965+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Webservice Endpoint deployed VotoDAOWS
+ listening at address at http://si2srv01:8080/P1-ws-ws/VotoDAOWSService.]]
+
+[2024-04-13T11:18:53.894074+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@7a67a81b[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=1, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-13T11:18:54.054137+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading application [P1-ws-ws] at [/P1-ws-ws]]]
+
+[2024-04-13T11:18:54.065778+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  P1-ws-ws was successfully deployed in 406 milliseconds.]]
+
+[2024-04-13T11:19:17.899364+02:00] [GF 7.0.9] [WARNING] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=28 _ThreadName=http-listener-1(4)] [levelValue: 900] [[
+  Probably the pool org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null] is not yet initialized (lazy-loading), trying to check ...]]
+
+[2024-04-13T11:19:17.947001+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=28 _ThreadName=http-listener-1(4)] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+
+[2024-04-13T11:42:06.336851+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@329b4511[name=/P1-ws-ws], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/P1-ws-ws/
+][delegate=true, context=/P1-ws-ws, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=28, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-13T11:42:26.487759+02:00] [GF 7.0.9] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Portable JNDI names for EJB VotoDAOBean: [java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean, java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean!ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-13T11:42:26.488429+02:00] [GF 7.0.9] [INFO] [AS-EJB-00055] [jakarta.enterprise.ejb.container] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB VotoDAOBean: [ssii2.servicio.dao.VotoDAORemote#ssii2.servicio.dao.VotoDAORemote, ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-13T11:42:26.565085+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2024-04-13T11:42:26.955892+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  P1-ejb-servidor was successfully deployed in 802 milliseconds.]]
+
+[2024-04-13T11:42:32.609417+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Webservice Endpoint deployed VotoDAOWS
+ listening at address at http://si2srv01:8080/P1-ws-ws/VotoDAOWSService.]]
+
+[2024-04-13T11:42:32.613581+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@1848d978[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=1, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-13T11:42:32.762638+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Loading application [P1-ws-ws] at [/P1-ws-ws]]]
+
+[2024-04-13T11:42:32.777593+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=41 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  P1-ws-ws was successfully deployed in 369 milliseconds.]]
+
+[2024-04-13T11:51:45.459816+02:00] [GF 7.0.9] [WARNING] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=29 _ThreadName=http-listener-1(5)] [levelValue: 900] [[
+  Probably the pool org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null] is not yet initialized (lazy-loading), trying to check ...]]
+
+[2024-04-13T11:51:45.494313+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=29 _ThreadName=http-listener-1(5)] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+
+[2024-04-13T11:54:22.863334+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=42 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@64371566[name=/P1-ws-ws], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/P1-ws-ws/
+][delegate=true, context=/P1-ws-ws, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=28, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-13T11:57:38.336218+02:00] [GF 7.0.9] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Portable JNDI names for EJB VotoDAOBean: [java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean, java:global/P1-ejb-servidor/P1-ejb-servidor/VotoDAOBean!ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-13T11:57:38.341057+02:00] [GF 7.0.9] [INFO] [AS-EJB-00055] [jakarta.enterprise.ejb.container] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Glassfish-specific (Non-portable) JNDI names for EJB VotoDAOBean: [ssii2.servicio.dao.VotoDAORemote#ssii2.servicio.dao.VotoDAORemote, ssii2.servicio.dao.VotoDAORemote]]]
+
+[2024-04-13T11:57:38.423184+02:00] [GF 7.0.9] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2024-04-13T11:57:38.761508+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=39 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  P1-ejb-servidor was successfully deployed in 716 milliseconds.]]
+
+[2024-04-13T11:57:50.792961+02:00] [GF 7.0.9] [INFO] [AS-WSJSR109IMPL-00018] [jakarta.enterprise.webservices] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Webservice Endpoint deployed VotoDAOWS
+ listening at address at http://si2srv01:8080/P1-ws-ws/VotoDAOWSService.]]
+
+[2024-04-13T11:57:50.793994+02:00] [GF 7.0.9] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@3f81d051[name=unknown], urls=[
+file:/opt/glassfish7/glassfish/domains/domain1/applications/P1-ws-ws/WEB-INF/classes/
+file:/opt/glassfish7/glassfish/domains/domain1/generated/ejb/P1-ws-ws/
+][delegate=true, context=unknown, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=1, pathTimestamps.size=4, resourceEntryCache.size=4]]]
+
+[2024-04-13T11:57:50.925667+02:00] [GF 7.0.9] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [P1-ws-ws] at [/P1-ws-ws]]]
+
+[2024-04-13T11:57:50.936445+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=40 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  P1-ws-ws was successfully deployed in 364 milliseconds.]]
+
+[2024-04-13T11:59:08.095049+02:00] [GF 7.0.9] [WARNING] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=28 _ThreadName=http-listener-1(4)] [levelValue: 900] [[
+  Probably the pool org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null] is not yet initialized (lazy-loading), trying to check ...]]
+
+[2024-04-13T11:59:08.127244+02:00] [GF 7.0.9] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=28 _ThreadName=http-listener-1(4)] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@eb0889af[jndiName=VotoPool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+
