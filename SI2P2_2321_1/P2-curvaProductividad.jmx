@@ -83,7 +83,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Valores por Defecto para Petición HTTP">
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Valores por Defecto para Petición HTTP" enabled="true">
         <stringProp name="HTTPSampler.domain">10.4.1.2</stringProp>
         <stringProp name="HTTPSampler.port">8080</stringProp>
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -92,7 +92,7 @@
         <stringProp name="HTTPSampler.implementation"></stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el usuario">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el usuario" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="candidato1" elementType="Argument">
             <stringProp name="Argument.name">candidato1</stringProp>
@@ -128,7 +128,7 @@
         <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
       <hashTree/>
-      <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="indiceCandidatoVotado">
+      <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="indiceCandidatoVotado" enabled="true">
         <stringProp name="maximumValue">3</stringProp>
         <stringProp name="minimumValue">1</stringProp>
         <stringProp name="outputFormat"></stringProp>
@@ -137,7 +137,7 @@
         <stringProp name="variableName">indiceCandidatoVotado</stringProp>
       </RandomVariableConfig>
       <hashTree/>
-      <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idCircunscripcion">
+      <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idCircunscripcion" enabled="true">
         <stringProp name="CounterConfig.start">1</stringProp>
         <stringProp name="CounterConfig.end"></stringProp>
         <stringProp name="CounterConfig.incr">5</stringProp>
@@ -146,7 +146,7 @@
         <boolProp name="CounterConfig.per_user">false</boolProp>
       </CounterConfig>
       <hashTree/>
-      <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idMesaElectoral">
+      <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idMesaElectoral" enabled="true">
         <stringProp name="CounterConfig.start">1</stringProp>
         <stringProp name="CounterConfig.end"></stringProp>
         <stringProp name="CounterConfig.incr">5</stringProp>
@@ -155,7 +155,7 @@
         <boolProp name="CounterConfig.per_user">false</boolProp>
       </CounterConfig>
       <hashTree/>
-      <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idProcesoElectoral">
+      <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="idProcesoElectoral" enabled="true">
         <stringProp name="CounterConfig.start">1</stringProp>
         <stringProp name="CounterConfig.end"></stringProp>
         <stringProp name="CounterConfig.incr">1</stringProp>
@@ -176,7 +176,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET a voto.xhtml">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET a voto.xhtml" enabled="true">
           <intProp name="HTTPSampler.concurrentPool">6</intProp>
           <stringProp name="HTTPSampler.path">/P1-base/voto.xhtml</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -194,7 +194,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para ID formulario">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para ID formulario" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           <stringProp name="RegexExtractor.refname">idFormulario</stringProp>
@@ -204,7 +204,7 @@
           <stringProp name="RegexExtractor.default"></stringProp>
         </RegexExtractor>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para Estado de Vista JSF">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para Estado de Vista JSF" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           <stringProp name="RegexExtractor.refname">jsfViewState</stringProp>
@@ -214,7 +214,7 @@
           <stringProp name="RegexExtractor.default"></stringProp>
         </RegexExtractor>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares ara URL Formulario">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares ara URL Formulario" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           <stringProp name="RegexExtractor.refname">urlpost_form</stringProp>
@@ -224,7 +224,7 @@
           <stringProp name="RegexExtractor.default"></stringProp>
         </RegexExtractor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST a voto.xhtml">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST a voto.xhtml" enabled="true">
           <intProp name="HTTPSampler.concurrentPool">6</intProp>
           <stringProp name="HTTPSampler.path">${urlpost_form}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -286,7 +286,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuración del CSV Data Set" enabled="true">
           <stringProp name="delimiter">|</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">datagen/fichero.csv</stringProp>
@@ -298,7 +298,7 @@
           <stringProp name="variableNames">numeroDNI,nombre,fechaNacimiento,anioCenso,codigoAutorizacion</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para ID formulario">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para ID formulario" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           <stringProp name="RegexExtractor.refname">idFormulario</stringProp>
@@ -308,7 +308,7 @@
           <stringProp name="RegexExtractor.default"></stringProp>
         </RegexExtractor>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para Estado de Vista JSF">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para Estado de Vista JSF" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           <stringProp name="RegexExtractor.refname">jsfViewState</stringProp>
@@ -318,7 +318,7 @@
           <stringProp name="RegexExtractor.default"></stringProp>
         </RegexExtractor>
         <hashTree/>
-        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para URL Formulario">
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expresiones Regulares para URL Formulario" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
           <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           <stringProp name="RegexExtractor.refname">urlpost_form</stringProp>
@@ -328,7 +328,7 @@
           <stringProp name="RegexExtractor.default"></stringProp>
         </RegexExtractor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST a censo.xhtml">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST a censo.xhtml" enabled="true">
           <intProp name="HTTPSampler.concurrentPool">6</intProp>
           <stringProp name="HTTPSampler.path">${urlpost_form}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -397,7 +397,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer">
+        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
           <stringProp name="ConstantTimer.delay">${thinkTimeMin}</stringProp>
           <stringProp name="RandomTimer.range">${thinkTimeMax}</stringProp>
         </UniformRandomTimer>
